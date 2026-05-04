@@ -20,9 +20,9 @@ class PriorityArray{
     
     private:
         int return_max_element_index(); //metoda pomocnicza do znajdowania indeksu pod ktorym znajduje sie najwiekszy klucz
-        void pop_at(int index);
+        void pop_at(int index);//metoda pomocnicza do usuwania elementu na podanym indeksie
         void resize(); //metoda pomocnicza do powiekszenia tablicy
-        Element* data;
+        Element* data;//wskaznik na dane
         int size; //ilosc elementow
         int capacity; //rozmiar tablicy
 };

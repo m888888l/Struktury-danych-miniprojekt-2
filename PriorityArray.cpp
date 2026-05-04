@@ -34,7 +34,7 @@ int PriorityArray::return_max_element_index(){
 }
 
 Element PriorityArray::extract_max(){
-    int max_element_index = return_max_element_index();
+    int max_element_index = return_max_element_index();//zmienna tymczasowa do trzymania indeksu najwiekszego klucza, aby nie musiec kilka razy uzywac kosztownej metody
     Element temp = data[max_element_index];
     pop_at(max_element_index);
 
@@ -68,7 +68,7 @@ Element PriorityArray::find_max(){
     
 void PriorityArray::modify_key(int value, int key){
     for(int i = 0; i < size; i++){
-        if(data[i].value == value) data[i].key = key;
+        if(data[i].value == value) data[i].key = key;//znajduje pierwszy element z podana wartoscia i zmienia jej klucz
     }
 }
 
