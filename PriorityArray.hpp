@@ -1,12 +1,8 @@
 #pragma once
 #include <iostream>
+#include "Base.hpp"
 
-struct Element{
-    int value;
-    int key;
-};
-
-class PriorityArray{
+class PriorityArray : public Base{
     public:
     PriorityArray();
     ~PriorityArray();
