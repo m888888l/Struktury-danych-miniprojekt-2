@@ -1,0 +1,24 @@
+#pragma once
+#include <iostream>
+#include "Base.hpp"
+
+class PriorityArray : public Base{
+    public:
+    PriorityArray();
+    ~PriorityArray();
+
+    void insert(int value, int key);
+    Element extract_max();
+    Element find_max();
+    int return_size();
+    void modify_key(int value, int key);
+    void print();
+    
+    private:
+        int return_max_element_index(); //metoda pomocnicza do znajdowania indeksu pod ktorym znajduje sie najwiekszy klucz
+        void pop_at(int index);//metoda pomocnicza do usuwania elementu na podanym indeksie
+        void resize(); //metoda pomocnicza do powiekszenia tablicy
+        Element* data;//wskaznik na dane
+        int size; //ilosc elementow
+        int capacity; //rozmiar tablicy
+};
