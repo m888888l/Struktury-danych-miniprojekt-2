@@ -1,5 +1,4 @@
 #pragma once
-#include <iostream>
 #include "Base.hpp"
 
 class PriorityArray : public Base{
