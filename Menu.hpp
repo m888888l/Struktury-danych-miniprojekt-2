@@ -4,6 +4,7 @@
 #include <string>
 #include <sstream>
 #include <random>
+#include "Benchmark.hpp"
 #include "Heap.hpp"
 #include "PriorityArray.hpp"
 

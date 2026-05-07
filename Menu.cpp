@@ -1,12 +1,4 @@
-#include <cstdlib>
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <sstream>
-#include <random>
 #include "Menu.hpp"
-#include "Heap.hpp"
-#include "PriorityArray.hpp"
 
 using namespace std;
 
@@ -21,6 +13,7 @@ void Menu::menu(){
     int arg2;
     int arg3;
     Base* chosen_structure = nullptr;
+    Benchmark benchmark;
 
     while(1){
         system("cls");
@@ -29,7 +22,7 @@ void Menu::menu(){
         system("cls");
         if(structure == 1) chosen_structure = new Heap;
         else if(structure == 2) chosen_structure = new PriorityArray;
-        else if(structure == 3) ;//testy
+        else if(structure == 3) benchmark.run();
         else if(structure == 4) return;
 
         if(chosen_structure != nullptr){
