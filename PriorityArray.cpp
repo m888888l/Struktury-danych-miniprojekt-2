@@ -52,8 +52,7 @@ void PriorityArray::pop_at(int index){
 void PriorityArray::insert(int value, int key){
     if(size == capacity) resize(); //dodanie elementu, wiec trzeba sprawdzic czy sie zmiesci i powiekszyc tablice jak nie
     
-    data[size].value = value;
-    data[size].key = key;
+    data[size] = Element{value, key};
     
     size++;
 }
