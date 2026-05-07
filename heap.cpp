@@ -44,11 +44,7 @@ void heap::heapify_down(int index) {
 }
 
 void heap::insert(int value, int key) {
-  Element new_element;
-  new_element.value = value;
-  new_element.key = key;
-
-  data.push_back(new_element);
+  data.push_back(Element{value, key});
   heapify_up(data.size() - 1);
 }
 
