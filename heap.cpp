@@ -23,13 +23,12 @@ void Heap::heapify_down(int index) {
   int largest = index;
   int left = 2 * index + 1;
   int right = 2 * index + 2;
-  int current_size = data.size();
 
-  if (left < current_size && data[left].key > data[largest].key) {
+  if (left < data.size() && data[left].key > data[largest].key) {
     largest = left;
   }
 
-  if (right < current_size && data[right].key > data[largest].key) {
+  if (right < data.size() && data[right].key > data[largest].key) {
     largest = right;
   }
 
@@ -63,8 +62,7 @@ Element Heap::find_max() { return data[0]; }
 int Heap::return_size() { return data.size(); }
 
 void Heap::modify_key(int value, int key) {
-  int current_size = data.size();
-  for (int i = 0; i < current_size; i++) {
+  for (int i = 0; i < data.size(); i++) {
     if (data[i].value == value) {
       int old_key = data[i].key;
       data[i].key = key;
@@ -80,8 +78,7 @@ void Heap::modify_key(int value, int key) {
 }
 
 void Heap::print() {
-  int current_size = data.size();
-  for (int i = 0; i < current_size; i++) {
-    std::cout << "(" << data[i].value << ", " << data[i].key << ")\n";
+  for (int i = 0; i < data.size(); i++) {
+    std::cout << "(" << data[i].value << ", " << data[i].key << ") ";
   }
 }

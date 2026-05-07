@@ -67,12 +67,15 @@ Element PriorityArray::find_max(){
     
 void PriorityArray::modify_key(int value, int key){
     for(int i = 0; i < size; i++){
-        if(data[i].value == value) data[i].key = key;//znajduje pierwszy element z podana wartoscia i zmienia jego klucz
+        if(data[i].value == value){
+            data[i].key = key;//znajduje pierwszy element z podana wartoscia i zmienia jego klucz
+            return;
+        }
     }
 }
 
 void PriorityArray::print(){
     for(int i = 0; i < size; i++){
-        std::cout<<"("<<data[i].value<<", "<<data[i].key<<")\n";
+        std::cout<<"("<<data[i].value<<", "<<data[i].key<<") ";
     }
 }
