@@ -2,10 +2,10 @@
 #include "Base.hpp"
 #include <vector>
 
-class heap : public Base {
+class Heap : public Base {
 public:
-  heap();
-  ~heap();
+  Heap();
+  ~Heap();
 
   void insert(int value, int key);
   Element extract_max();

@@ -1,12 +1,12 @@
-#include "heap.hpp"
+#include "Heap.hpp"
 #include <iostream>
 #include <cstdlib>
 
-heap::heap() {}
+Heap::Heap() {}
 
-heap::~heap() {}
+Heap::~Heap() {}
 
-void heap::heapify_up(int index) {
+void Heap::heapify_up(int index) {
   if (index == 0)
     return;
 
@@ -19,7 +19,7 @@ void heap::heapify_up(int index) {
   }
 }
 
-void heap::heapify_down(int index) {
+void Heap::heapify_down(int index) {
   int largest = index;
   int left = 2 * index + 1;
   int right = 2 * index + 2;
@@ -40,12 +40,12 @@ void heap::heapify_down(int index) {
   }
 }
 
-void heap::insert(int value, int key) {
+void Heap::insert(int value, int key) {
   data.push_back(Element{value, key});
   heapify_up(data.size() - 1);
 }
 
-Element heap::extract_max() {
+Element Heap::extract_max() {
   Element max_element = data[0];
 
   data[0] = data.back();
@@ -58,11 +58,11 @@ Element heap::extract_max() {
   return max_element;
 }
 
-Element heap::find_max() { return data[0]; }
+Element Heap::find_max() { return data[0]; }
 
-int heap::return_size() { return data.size(); }
+int Heap::return_size() { return data.size(); }
 
-void heap::modify_key(int value, int key) {
+void Heap::modify_key(int value, int key) {
   int current_size = data.size();
   for (int i = 0; i < current_size; i++) {
     if (data[i].value == value) {
@@ -79,7 +79,7 @@ void heap::modify_key(int value, int key) {
   }
 }
 
-void heap::print() {
+void Heap::print() {
   int current_size = data.size();
   for (int i = 0; i < current_size; i++) {
     std::cout << "(" << data[i].value << ", " << data[i].key << ")\n";
