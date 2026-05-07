@@ -1,5 +1,6 @@
 #include "heap.hpp"
 #include <iostream>
+#include <cstdlib>
 
 heap::heap() {}
 
@@ -12,9 +13,7 @@ void heap::heapify_up(int index) {
   int parent = (index - 1) / 2;
 
   if (data[index].key > data[parent].key) {
-    Element temp = data[index];
-    data[index] = data[parent];
-    data[parent] = temp;
+    std::swap(data[index], data[parent]);
 
     heapify_up(parent);
   }
@@ -35,9 +34,7 @@ void heap::heapify_down(int index) {
   }
 
   if (largest != index) {
-    Element temp = data[index];
-    data[index] = data[largest];
-    data[largest] = temp;
+    std::swap(data[index], data[largest]);
 
     heapify_down(largest);
   }
