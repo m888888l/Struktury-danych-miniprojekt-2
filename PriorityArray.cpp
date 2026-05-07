@@ -67,7 +67,7 @@ Element PriorityArray::find_max(){
     
 void PriorityArray::modify_key(int value, int key){
     for(int i = 0; i < size; i++){
-        if(data[i].value == value) data[i].key = key;//znajduje pierwszy element z podana wartoscia i zmienia jej klucz
+        if(data[i].value == value) data[i].key = key;//znajduje pierwszy element z podana wartoscia i zmienia jego klucz
     }
 }
 
