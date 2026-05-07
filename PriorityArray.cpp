@@ -1,8 +1,8 @@
 #include <iostream>
 #include "PriorityArray.hpp"
 
-PriorityArray::PriorityArray() : capacity(5), size(0){
-    data = new Element[5]; //alokuje pamiec o rozmiarze 5*sizeof(Element) i przypisuje wskaznik tej pamieci do data
+PriorityArray::PriorityArray() : capacity(11), size(0){
+    data = new Element[11]; //alokuje pamiec o rozmiarze 5*sizeof(Element) i przypisuje wskaznik tej pamieci do data
 }
 
 PriorityArray::~PriorityArray(){

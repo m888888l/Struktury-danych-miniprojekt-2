@@ -3,7 +3,7 @@
 using namespace std;
 using namespace std::chrono;
 
-const vector<int> SIZES = {100, 200, 300, 400, 500, 600, 700, 800};
+const vector<int> SIZES = {8000000, 10000000, 12000000, 14000000, 16000000, 18000000, 20000000, 22000000};
 const int SAMPLES = 100;
 
 Benchmark::Benchmark(){};
@@ -40,12 +40,15 @@ void Benchmark::run(const std::string &outputFilename){
     structures.reserve(SAMPLES);
 
     for(int i = 0; i < 2; i++){//przechodzi po strukturach
+        cout<<"Struktura: "<<i<<"\n";
         for(int size : SIZES){
+            cout<<"Rozmiar: "<<size<<"\n";
             mt19937 gen(0);
             uniform_int_distribution<> dist_value(0, 100000000);
             uniform_int_distribution<> dist_key(0, size * 4);
 
             for(int j = 0; j < SAMPLES; j++){
+                cout<<j<<" ";
                 structures.push_back(createStructure(i));
                 fill_structure(size, j, structures.back());
             }
